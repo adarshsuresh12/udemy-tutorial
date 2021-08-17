@@ -9,8 +9,10 @@ def hello_world():
 @app.route('/posttry', methods=["POST"])
 def something():
     d=request.get_json()
+    if "x" not in d:
+        return "Error", 400
     print(d["x"])
-    return jsonify(d)
+    return jsonify(d),200
 # return index.html
 # return render_template("index.html")
 if __name__ == "__main__":
