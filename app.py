@@ -8,8 +8,14 @@ class Add(Resource):
         #resource add requested using POST
         # step1: getting post data
         data=request.get_json()
+        z=int(data["x"])+int(data["y"])
+        ans={
+            "z": z
+        }
+        return jsonify(ans)
     def get(self):
         #resource add reqested using GET
+        pass
 class Subtract(Resource):
     pass
 
