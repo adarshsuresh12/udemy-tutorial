@@ -4,6 +4,8 @@ services:
     build: ./web 
     ports:
       - "5000:5000"
-  # db:
-  #   buld: ./db
+    links:
+      - db
+  db:
+    build: ./db
   
